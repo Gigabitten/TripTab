@@ -34,8 +34,7 @@ h2 {
 }
 
 .right {
-    background-color: #636363;
-    text-align: right;
+
     font-size: 18px;    
     width: 10%;
 }
@@ -45,10 +44,10 @@ h2 {
 }
 
 .middle {
-    width: 80%;
+    width: 70%;
     background-image: url("img/ban.jpg");
     background-position: center;
-    height: 100%;
+    height: auto;
     
 }
 
@@ -140,9 +139,27 @@ ul {
     display: block;
   }
 
+input {
+  width: 100%;
+  background-color: rgb(56, 56, 56);
+  color: rgb(209, 209, 209);
+  border-radius: 5%;
+  padding: 2%;
+  margin: 5%;
+  border: rgb(0, 0, 0);
+  font-size: 18px;
+}
 
-
-
+button {
+  width: 100%;
+  background-color: rgb(56, 56, 56);
+  color: rgb(209, 209, 209);
+  border-radius: 5%;
+  padding: 2%;
+  margin: 5%;
+  border: rgb(0, 0, 0);
+  font-size: 18px;
+}
 
 
 

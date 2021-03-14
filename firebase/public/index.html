@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="stylesheet" href="acount.css">
+
+  
     <title>TripTab</title>
 </head>
 <body>
@@ -12,11 +15,16 @@
         <div class="column left">
         </div>
         <div class="column middle">
-            <h1>TripTab</h1>
+          <h1>TripTab</h1>
         </div>
         <div class="column right">
-          <a href="login.html"><h6>Login In</h6></a>
-          <a href="signup.html"><h6>Sign Up</h6></a>
+          
+          <input type="email" placeholder="Email..." id="email"/>
+          <input type="password" placeholder="Password..." id="password"/>
+
+          <button onclick="signUp()" id="signUp">Sign Up</button>
+          <button onclick="signIn()" id="signIn">Sign In</button>
+          <button onclick="signOut()" id="signOut">Sign Out</button>
         </div>
       </div>
     
@@ -28,5 +36,12 @@
 
       </ul>
 
+  <script type="text/javascript" src="/__/firebase/8.3.0/firebase-app.js"></script>
+  <script type="text/javascript" src="/__/firebase/8.3.0/firebase-analytics.js"></script>
+  <script type="text/javascript" src="/__/firebase/init.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.3.0/firebase-analytics.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+  <script type="text/javascript" src="scripts/login.js"></script>
 </body>
 </html>
