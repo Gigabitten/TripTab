@@ -50,6 +50,24 @@ h2 {
     height: auto;
     
 }
+.topnav a.button:hover {
+  background-color: white;
+  color: black;
+}
+
+.topnav {
+  width: 100%;
+}
+
+.button {
+  border: black;
+  border-radius: 10px;
+  border-style: solid;
+  background-color: #1f1f1f;
+  color: #d8d8d8;
+  font-size: 28px;
+  padding: 25px;
+}
 
 ul {
     list-style-type: none;

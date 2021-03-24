@@ -19,29 +19,26 @@ const firebaseConfig = {
     
     
   function signUp(){
-      
-      var email = document.getElementById("email");
-      var password = document.getElementById("password");
-      
-      const promise = auth.createUserWithEmailAndPassword(email.value, password.value);
-      promise.catch(e => alert(e.message));
-      alert("Signed Up");
+      window.location.href = "signup.html";
   }
   
   
   
   function signIn(){
-      var email = document.getElementById("email");
-      var password = document.getElementById("password");
       
-      const promise = auth.signInWithEmailAndPassword(email.value, password.value);
+      const promise = auth.signInWithEmailAndPassword(email.value, password.value)
+      .then((userCredential) => {
+        window.location.href = "main.html";
+      })
       promise.catch(e => alert(e.message));
+      console.log(promise);
   }
   
   
   function signOut(){      
       auth.signOut();
       alert("Signed Out");
+      window.location.href = "index.html";
   }
   
   
@@ -51,14 +48,14 @@ const firebaseConfig = {
           var email = user.email;
           alert("Active User " + email);
           
-          if(loggedIn == 0) {
-            //window.location.href = "main.html";
-            loggedIn++;
-            console.log(loggedIn);
-          }
+          
       } else{
-          
-          
+          if(window.location.href.indexOf("main.html") != -1) {
+              window.location.href = "index.html";
+          }
+          console.log(window.location.href)
+      
+        
           //no user is signed in
       }
   });
