@@ -1,62 +1,26 @@
 html, body {
-    background-color: #1f1f1e;
-    font-family: Verdana;
-    height: 100%;
-  }
+  background-color: #1f1f1e;
+  font-family: Verdana;
+  height: 100%;
+}
 
 h1 {
-    text-align: center;
-    font-size: 95px;
-    text-decoration: underline;
-    color: #ac9999;
+  text-align: center;
+  font-size: 95px;
+  text-decoration: underline;
+  color: #ececec;
 }
 
 h2 {
-    text-align: center;
-    font-size: 55px;
-    text-decoration: underline;
-    color: #ff0062;
+  text-align: center;
+  font-size: 45px;
+  color: rgb(0, 0, 0);
 }
 
-.column{
-    padding: 15px;
-    display: table-cell;
-    
-}
-
-.center {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.left {
-    width: 10%;
-}
-
-.right {
-
-    font-size: 18px;    
-    width: 10%;
-}
-.row {
-    display: table;
-    width: 100%;
-}
-
-.middle {
-    width: 70%;
-    background-image: url("img/ban.jpg");
-    background-position: center;
-    height: auto;
-    
-}
-.topnav a.button:hover {
-  background-color: white;
-  color: black;
-}
-
-.topnav {
-  width: 100%;
+h6 {
+  text-align: right;
+  font-size: 14px;
+  color: #e6e6e6;
 }
 
 .button {
@@ -69,130 +33,91 @@ h2 {
   padding: 25px;
 }
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-  }
-  
-  li {
-    float: left;
-  }
-  
-  li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-  li a:hover {
-    background-color: #111;
-  }
-
-  
-
-
-
-  .navbar {
-    overflow: hidden;
-    background-color: #333;
-  }
-  
-  .navbar a {
-    float: left;
-    font-size: 16px;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-  .dropdown {
-    float: left;
-    overflow: hidden;
-  }
-  
-  .dropdown .dropbtn {
-    font-size: 16px;  
-    border: none;
-    outline: none;
-    color: white;
-    padding: 14px 16px;
-    background-color: inherit;
-    font-family: inherit;
-    margin: 0;
-  }
-  
-  .navbar a:hover, .dropdown:hover .dropbtn {
-    background-color: red;
-  }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-  .dropdown-content a {
-    float: none;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-  
-  .dropdown-content a:hover {
-    background-color: #ddd;
-  }
-  
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-
-input {
-  width: 100%;
-  background-color: rgb(56, 56, 56);
-  color: rgb(209, 209, 209);
-  border-radius: 5%;
-  padding: 2%;
-  margin: 5%;
-  border: rgb(0, 0, 0);
-  font-size: 18px;
+.topnav a.button:hover {
+  background-color: white;
+  color: black;
 }
 
-button {
+.topnav {
   width: 100%;
-  background-color: rgb(56, 56, 56);
-  color: rgb(209, 209, 209);
-  border-radius: 5%;
-  padding: 2%;
-  margin: 5%;
-  border: rgb(0, 0, 0);
-  font-size: 18px;
 }
 
+.column{
+  padding: 15px;
+  display: table-cell;
+  
+}
 
+.left {
+  width: 10%;
+}
 
-  table, th, td {
-    border: 1px solid rgb(175, 175, 175);
-    border-collapse: collapse;
-  }
-  th, td {
-    padding: 5px;
-    text-align: left;
-    color: rgb(175,175,175);
-  }
+.right {
+  background-color: #636363;
+  text-align: right;
+  font-size: 18px;    
+  width: 10%;
+}
 
-  caption {
+.middle {
+  width: 80%;
+  background-image: url("img/ban.jpg");
+  background-position: center;
+  height: 100%;
+  
+}
+.row {
+  display: table;
+  width: 100%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+.rowMain {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  padding-top: 20px;
+}
+
+.mainCol1 {
+    width: 15%;
+  
+    display: table-cell;
+}
+
+.mainCol2 {
+    width: 85%;
+    
+    display: table-cell;
+    background-color: rgb(165, 165, 165);
+}
+
+footer {
+    width: 100%;
     text-align: center;
-    font-size: 40px;
-    color: rgb(175,175,175);
+    font-size: 12px;
+    background-color: #636363;
+    padding: 10px;
+    position: fixed;
+    bottom: 0%;
+}
+
+h6:hover{
+  color: red;
+  font-size: 15px;
+}
+
+  a {
+      text-decoration: none;
   }
