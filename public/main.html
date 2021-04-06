@@ -20,25 +20,6 @@
           <button onclick="signOut()" id="signOut">Sign Out</button>
         </div>
     </div>
-<<<<<<< HEAD:public/main.html
-
-      <div class="navbar">
-          <ul>
-              <li><a href="index.html">Home</a></li>
-              <div class="dropdown">
-                  <button class="dropbtn">Main 
-                      <i class="fa fa-caret-down"></i>
-                    </button>
-              <div class="dropdown-content">
-                <a href="#curT">Current Trips</a>
-                <a href="#newT">Add New Trip</a>
-                <a href="#closT">Close Out Trip</a>
-                </div>
-                </div>
-             <li><a href="about.html">About</a></li>
-            </ul>
-        </div>
-=======
     
     <br><br><br><br>
       <div class="topnav">
@@ -46,69 +27,57 @@
         <a class="button" href="main.html">Main</a>
         <a class="button" href="about.html">About</a>
       </div>
->>>>>>> Login:firebase/public/main.html
 
 
         <br><br><br><br><br><br>
-        <Div id="curT">
-            <h2>Current Trips</h2>
-            <table class = "center" style="width:50%">
-                <caption>Trip A</caption>
+        <div class="selecttripdropdown" >
+          <button class="selecttripdropbtn" style="left:50%">Pick/Add a Trip</button>
+          <div class="dropdown-content">
+            <table id = "tripDropdownTable">
+              
+            </table>
+            
+    
+            <a href="AddTrip.html">Add Trip</a>
+          </div>
+        </div>
+       
+
+  
+            <br>
+            <table id="membersTable" class = "center" style="background-color: lightslategrey;">
+              <caption>Trip 1 People</caption>
                 <tr>
                   <th>Person</th>
                   <th>$</th>
                 </tr>
+          
+                
+                </table>
+                <br>
+              
+                <a href = "addPerson.html" class="selecttripdropbtn" > Add Person</button>
+                <br><br>
+                  <table id="expenseTable" class = "center" style="background-color: lightslategrey;">
+                
+                <caption>Trip 1 Expenses</caption>
                 <tr>
-                  <td>Bob</td>
-                  <td>$100</td>
-                </tr>
-                <tr>
-                  <td>Sarah</td>
-                  <td>-$50</td>
-                </tr>
-                <tr>
-                    <td>Steve</td>
-                    <td>$25</td>
-                  </tr>
-              </table>
-        </Div>
-
-        <br><br><br><br><br><br>
-        <Div id="newT">
-            <h2>New Trip</h2>
-            <table class="center" style="width:50%">
-                <caption>Trip B</caption>
-                <tr>
-                  <th>Person</th>
+                  <th>Expense</th>
                   <th>$</th>
+                  <th>Who Paid?</th>
+                  <th>Who Owes?</th>
                 </tr>
-              </table>
-        </Div>
+              
+                </table>
+                <button class="selecttripdropbtn" style="display:inline-block;  width: 30%; margin-left: 15%; "> Add Expense</button>
+              <button class="selecttripdropbtn" style=" display:inline-block; width: 30%;  ">Close Trip</button>
+              <br><br><br><br><br><br><br><br><br><br><br><br>
 
 
-        <br><br><br><br><br><br>
-        <Div id="closT">
-            <h2>Close Trip</h2>
-            <table class ="center" style="width:50%">
-                <caption>Trip C</caption>
-                <tr>
-                  <th>Person</th>
-                  <th>$</th>
-                </tr>
-                <tr>
-                    <td>Steve</td>
-                    <td>$15</td>
-                  </tr>
-              </table>
-        </Div>
-
-
-  <script src="/__/firebase/8.3.0/firebase-app.js"></script>
-  <script src="/__/firebase/8.3.0/firebase-analytics.js"></script>
-  <script src="/__/firebase/init.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-analytics.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
-  <script src="JS/login.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+  <script src="JS/getTrip.js"></script>
 </body>
 </html>
