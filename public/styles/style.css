@@ -70,7 +70,15 @@ h6 {
 #signupInputs {
     margin: auto;
     width: 40%;
+}
+
+th {
     text-align: right;
+}
+
+td {
+    text-align: left;
+    padding-left: 10px;
 }
 
 .row {
