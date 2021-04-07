@@ -1,44 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <link rel="stylesheet" href="acount.css">
-
-  
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>    
     <title>TripTab</title>
-</head>
-<body>
-    <div class="row">
-        <div class="column left">
-          <h1>TripTab</h1>
-        </div>
-        <div class="column right">
-          <input type="email" placeholder="Email..." id="email"/>
-          <input type="password" placeholder="Password..." id="password"/>
-
-          <button onclick="signUp()" id="signUp">Sign Up</button>
-          <button onclick="signIn()" id="signIn">Sign In</button>
-          <button onclick="signOut()" id="signOut">Sign Out</button>
-        </div>
-      </div>
+  </head>
+  <body>
+    
+    <div id="top"></div>
+    <script type="text/javascript">
+      $("#top").load("top.html");
+    </script>
     
     <br><br><br><br>
-      <div class="topnav">
-        <a class="button" href="index.html">Home</a>
-        <a class="button" href="main.html">Main</a>
-        <a class="button" href="about.html">About</a>
-      </div>
 
+    <div id="nav"></div>
+    <script type="text/javascript">
+      $("#nav").load("nav.html");
+    </script>
 
-  <script type="text/javascript" src="/__/firebase/8.3.0/firebase-app.js"></script>
-  <script type="text/javascript" src="/__/firebase/8.3.0/firebase-analytics.js"></script>
-  <script type="text/javascript" src="/__/firebase/init.js"></script>
-  <script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
-  <script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.3.0/firebase-analytics.js"></script>
-  <script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
-  <script type="text/javascript" src="JS/login.js"></script>
-</body>
+    <script type="text/javascript" src="/__/firebase/8.3.0/firebase-app.js"></script>
+    <script type="text/javascript" src="/__/firebase/8.3.0/firebase-analytics.js"></script>
+    <script type="text/javascript" src="/__/firebase/init.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.3.0/firebase-analytics.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+    <script type="text/javascript" src="JS/login.js"></script>
+  </body>
 </html>
