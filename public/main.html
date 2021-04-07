@@ -28,37 +28,43 @@
         <a class="button" href="about.html">About</a>
       </div>
 
-
-        <br><br><br><br><br><br>
-        <div class="selecttripdropdown" >
-          <button class="selecttripdropbtn" style="left:50%">Pick/Add a Trip</button>
+        <br><br><br>
+        <div class ="row">
+        <div class="selecttripdropdown">
+          <a class="selecttripdropbtn" style="left:50%">Pick/Add a Trip</a>
           <div class="dropdown-content">
-            <table id = "tripDropdownTable">
-              
+            <table style="background-color: white; border: 0px;" id = "tripDropdownTable">
+              <a href="AddTrip.html">Add Trip</a>
+
             </table>
-            
     
-            <a href="AddTrip.html">Add Trip</a>
           </div>
+
         </div>
-       
+        <a href = "addPerson.html" class="selecttripdropbtn" > Add Person</a>
+          <a class="selecttripdropbtn" href="addExpense.html" > Add Expense</a>
+            <a class="selecttripdropbtn  ">Close Trip</a>
+         
+      </div>
 
   
-            <br>
-            <table id="membersTable" class = "center" style="background-color: lightslategrey;">
+            <br><br><br>
+            <div>
+            <table id="membersTable" class = "center" >
               <caption>Trip 1 People</caption>
                 <tr>
-                  <th>Person</th>
-                  <th>$</th>
+                  <th class="ballsDeep">Person</th>
+                  <th class="elbowDeep">$</th>
                 </tr>
           
                 
                 </table>
+              </div>
                 <br>
               
-                <a href = "addPerson.html" class="selecttripdropbtn" > Add Person</button>
                 <br><br>
-                  <table id="expenseTable" class = "center" style="background-color: lightslategrey;">
+
+                  <table id="expenseTable" class = "center" >
                 
                 <caption>Trip 1 Expenses</caption>
                 <tr>
@@ -69,8 +75,6 @@
                 </tr>
               
                 </table>
-                <a class="selecttripdropbtn" href="addExpense.html" > Add Expense</button>
-              <a class="selecttripdropbtn  ">Close Trip</button>
               <br><br><br><br><br><br><br><br><br><br><br><br>
 
 
