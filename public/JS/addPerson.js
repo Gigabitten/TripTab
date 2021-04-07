@@ -21,26 +21,50 @@ const firebaseConfig = {
   var emailRef
   
   var tripRef = db.collection("trips");
+  var userOBJ;
 
-function addPerson(){
-
-  specifictripRef="testTrip";
- 
-  userfb = firebase.auth().currentUser;
-  emailRef = userfb.email;
-
-  tripRef.doc(specifictripRef).update({
-     user1: addPersonEmail.value
-    
+  function getUser(emailstr, tripName){
+  
+    const col = db.collection("users");
+    const query = col.where('Email', '==', emailstr); //add current user email to grab it
+    query.get().then(snapshot=> {
+      snapshot.docs.forEach(doc =>{
+        console.log(doc.data().First)
+        userOBJ = doc.data()
+        addPersonCallback(emailstr, tripName)
+      })
   })
+  }
+function addPersonCallback(emailstr, tripName){
+
+  tripRef.doc(tripName).set({
+    Members: {
+      [userOBJ.First] : 0 
+    }
+  }, {merge: true})
   .then((emailRef) => {
     console.log("Document written with ID: ", emailRef);
-
+    
 })
 .catch((error) => {
     console.error("Error adding document: ", error);
 });
+userRef.doc(emailRef).set({
+  trips: firebase.firestore.FieldValue.arrayUnion(tripName)
+  
+}, {merge: true})
+.then((emailRef) => {
+  console.log("Document written with ID: ", emailRef);
+
+})
 
 
-alert("Added Person");
+alert("added expense to " + tripName);
+}
+function addPerson(){
+  var tripName = sessionStorage.getItem("currentTrip")
+  userfb = firebase.auth().currentUser;
+  emailRef = addPersonEmail.value
+  getUser(emailRef, tripName)
+  
 }

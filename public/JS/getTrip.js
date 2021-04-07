@@ -19,9 +19,11 @@ const firebaseConfig = {
   var db = firebase.firestore();
   var userRef = db.collection("users");
   var emailRef
-function getUserTrips(){
+
+function getUserTrips(emailstr){
+  
   const col = db.collection("users");
-  const query = col.where('Email', '==', 'jack@mavs.com'); //add current user email to grab it
+  const query = col.where('Email', '==', emailstr); //add current user email to grab it
   query.get().then(snapshot=> {
     snapshot.docs.forEach(doc =>{
       for (var trip of Object.entries(doc.data().trips)){
@@ -35,10 +37,13 @@ function getUserTrips(){
 })
 }
 function getTrip(tripin){
+  sessionStorage.setItem("currentTrip", tripin)
+  
   var jsondata
   const col = db.collection("trips");
   const query = col.where('TripName', '==', tripin); //add TripName instead of example to pull it
   var table = document.getElementById("membersTable");
+  table.innerHTML = table.rows[0].innerHTML;
   query.get().then(snapshot=> {
       snapshot.docs.forEach(doc =>{
         //console.log(doc.id, doc.data())
@@ -55,8 +60,8 @@ function getTrip(tripin){
 
    
         var expenseTable = document.getElementById("expenseTable")
+        expenseTable.innerHTML = expenseTable.rows[0].innerHTML
         for(var expense of Object.entries(doc.data().Expenses)){
-          
           var row = expenseTable.insertRow();
           var expensename = row.insertCell(0);
           var price = row.insertCell(1)
@@ -75,5 +80,10 @@ function getTrip(tripin){
 
 
 }
-getUserTrips();
+var email = sessionStorage.getItem("userEmail")
+getUserTrips(email);
+var currentTrip = sessionStorage.getItem("currentTrip")
+if (currentTrip !=null){
+  getTrip(currentTrip)
+}
 

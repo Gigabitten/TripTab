@@ -22,8 +22,8 @@ const firebaseConfig = {
   
   var tripRef = db.collection("trips");
 
-function addExpense(tripName){
-  
+function addExpense(){
+  var tripName = sessionStorage.getItem("currentTrip")
   userfb = firebase.auth().currentUser;
   emailRef = userfb.email;
   firstRef = userfb.Name;
@@ -44,11 +44,12 @@ function addExpense(tripName){
   }, {merge: true})
   .then((emailRef) => {
     console.log("Document written with ID: ", emailRef);
-
 })
 .catch((error) => {
     console.error("Error adding document: ", error);
 });
+
+
 
 
 alert("added expense to " + tripName);
