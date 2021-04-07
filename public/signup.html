@@ -11,12 +11,8 @@
     <body>
         
         <div class="row">
-            <div class="column left">
-            </div>
-            <div class="column middle">
+            <div class="column left" style="width: 100%;">
                 <h1>Stockcom</h1>
-            </div>
-            <div class="column right">
             </div>
         </div>
         
@@ -27,14 +23,33 @@
         <h2>User Signup</h2>
         
 
-        <input type="text" placeholder="Email..." id="email"/>
-        <input type="password" placeholder="Password..." id="password"/>
-        <input type="text" placeholder="Frist Name" id="firstName">
-        <input type="text" placeholder="Last Name" id="lastName">
-        <input type="text" placeholder="Display Name" id="displayName">
+        <table id="signupInputs">
+          <tr>
+            <th> Email </th>
+            <td> <input type="text" placeholder="Email..." id="email"/> </td>
+          </tr>
+          <tr>
+            <th> Password </th>
+            <td> <input type="password" placeholder="Password..." id="password"/><br /> </td>
+          </tr>
+          <tr>
+            <th> First Name </th>
+            <td> <input type="text" placeholder="First Name" id="firstName"><br /> </td>
+          </tr>
+          <tr>
+            <th> Last Name </th>
+            <td> <input type="text" placeholder="Last Name" id="lastName"><br /> </td>
+          </tr>
+          <tr>
+            <th> Display Name </th>
+            <td> <input type="text" placeholder="Display Name" id="displayName"><br /> </td>
+          </tr>
+          <tr>
+            <th></th>
+            <td> <button onclick="signUp()">Sign Up</button> </td>
+        </table>
 
-
-        <button onclick="signUp()" id="signUp">Sign Up</button>
+        
 
         <script type="text/javascript" src="/__/firebase/8.3.0/firebase-app.js"></script>
         <script type="text/javascript" src="/__/firebase/8.3.0/firebase-analytics.js"></script>

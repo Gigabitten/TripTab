@@ -48,24 +48,31 @@ h6 {
   
 }
 
-.left {
-  width: 10%;
-}
-
 .right {
   background-color: #636363;
   text-align: right;
   font-size: 18px;    
-  width: 10%;
+  width: 20%;
 }
 
-.middle {
+#about-text {
+    color: #F0F8FF;
+}
+
+.left {
   width: 80%;
   background-image: url("img/ban.jpg");
   background-position: center;
   height: 100%;
   
 }
+
+#signupInputs {
+    margin: auto;
+    width: 40%;
+    text-align: right;
+}
+
 .row {
   display: table;
   width: 100%;

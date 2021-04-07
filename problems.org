@@ -7,20 +7,18 @@
   - [ ] adding trips
   - [ ] completing trips
   - [ ] navigation between trips
-- [ ] navigation buttons have some text which seems pointless
 - [ ] refactor navbar
-- [ ] sign up page looks awful; needs redesign
+- [X] sign up page looks awful; needs redesign
 - [ ] rejection of signup happens after saying you signed up successfully
 - [ ] user should be able to log in with username
-- [ ] about page has no signup and instead has blank gray space
-- [ ] whole top thing isn't effectively centered
+- [X] about page has no signup and instead has blank gray space
+- [X] whole top thing isn't effectively centered
 - [ ] sign up/in/out buttons aren't lined up
 - [ ] sign up/in/out buttons sometimes stack on top of each other
 - [ ] username/password boxes are too close together and not centered at all
 - [ ] sign up should transfer information from sign in box
 - [X] "Frist Name"
 - [ ] tabbing over to "Sign Up" doesn't work on signup page
-- [ ] "Sign Up" button should be bigger
 - [ ] signing up successfully doesn't go to home, logged in or otherwise
 - [ ] can't press enter to sign in
 - [ ] tabbing goes to "sign up," not "sign in"
@@ -36,7 +34,6 @@
 - [ ] top image is too damn tall; obscures content on smaller screens
 - [ ] request to activate user is annoying
 - [ ] pop-up alerts are annoying; inject conspicuous content into the page instead
-- [ ] about page is just empty lol. it should probably have placeholder text
+- [X] about page is just empty lol. it should probably have placeholder text
 - [ ] home/main/about is weirdly repeated on the trip page
-- [ ] sign in page has "Stockcom" instead of "TripTab"
 - [ ] pressing "main" when not logged in results in the normal page flashing up for just a moment
