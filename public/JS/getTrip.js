@@ -21,27 +21,32 @@ const firebaseConfig = {
   var emailRef
 function getUserTrips(){
   const col = db.collection("users");
-  const query = col.where('Email', '==', 'jack@mavs.com');
+  const query = col.where('Email', '==', 'jack@mavs.com'); //add current user email to grab it
   query.get().then(snapshot=> {
     snapshot.docs.forEach(doc =>{
-      console.log(doc.id, doc.data())
+      for (var trip of Object.entries(doc.data().trips)){
+      var table = document.getElementById("tripDropdownTable");
+      var row = table.insertRow();
+      //var cell1 = row.insertCell(0);
+      row.innerHTML = '<a onclick=getTrip("' +trip[1] + '") href="#">' + trip[1] + "</a>";
+      console.log(doc.data());
+      }
     })
 })
 }
-function getTrip(){
+function getTrip(tripin){
   var jsondata
   const col = db.collection("trips");
-  const query = col.where('TripName', '==', 'Example');
+  const query = col.where('TripName', '==', tripin); //add TripName instead of example to pull it
   var table = document.getElementById("membersTable");
   query.get().then(snapshot=> {
       snapshot.docs.forEach(doc =>{
-        console.log(doc.id, doc.data())
-        jsondata = doc.data();
+        //console.log(doc.id, doc.data())
        for (var member of Object.entries(doc.data().Members)){
         var row = table.insertRow();
         var cell1 = row.insertCell(0);
         var cell2 = row.insertCell(1);
-      
+
         cell1.innerHTML = member[0];
         cell2.innerHTML = member[1];
        }
@@ -70,37 +75,5 @@ function getTrip(){
 
 
 }
-getTrip();
-function createTrip(){
+getUserTrips();
 
-  userfb = firebase.auth().currentUser;
-  emailRef = userfb.email;
-  
-  tripRef.doc(tripName.value).set({
-    tripName: tripName.value,
-    mainUser: emailRef
-    
-  })
-  .then((emailRef) => {
-    console.log("Document written with ID: ", emailRef);
-
-})
-.catch((error) => {
-    console.error("Error adding document: ", error);
-});
-  userfb = firebase.auth().currentUser;
-  emailRef = userfb.email;
-  
-  userRef.doc(emailRef).update({
-    trip1: tripName.value
-
-    
-  })
-  .then((emailRef) => {
-    console.log("Document written with ID: ", emailRef);
-
-})
-
-
-alert("added trip");
-}

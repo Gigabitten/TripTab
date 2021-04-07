@@ -24,7 +24,7 @@ const firebaseConfig = {
 
 function addPerson(){
 
-  specifictripRef="bigTrip";
+  specifictripRef="testTrip";
  
   userfb = firebase.auth().currentUser;
   emailRef = userfb.email;

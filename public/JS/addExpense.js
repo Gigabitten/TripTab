@@ -22,17 +22,26 @@ const firebaseConfig = {
   
   var tripRef = db.collection("trips");
 
-function addPerson(){
-
-  specifictripRef="bigTrip";
- 
+function addExpense(tripName){
+  
   userfb = firebase.auth().currentUser;
   emailRef = userfb.email;
+  firstRef = userfb.Name;
+  exName = expenseName.value
+  price = expensePrice.value
+  whoPaid = expenseWhoPaid.value
+  whoOwes = expenseWhoOwes.value
 
-  tripRef.doc(specifictripRef).update({
-     user1: addPersonEmail.value
-    
-  })
+  tripRef.doc(tripName).set({
+    Expenses: {
+      [exName]: {
+          Name : exName,
+          Price: price,
+          WhoPaid: whoPaid,
+          WhoOwes: [whoOwes] 
+      } 
+    }
+  }, {merge: true})
   .then((emailRef) => {
     console.log("Document written with ID: ", emailRef);
 
@@ -42,5 +51,5 @@ function addPerson(){
 });
 
 
-alert("Added Person");
+alert("added expense to " + tripName);
 }

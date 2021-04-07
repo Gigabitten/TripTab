@@ -18,40 +18,62 @@ const firebaseConfig = {
 
   var db = firebase.firestore();
   var userRef = db.collection("users");
-  var emailRef
-  
+
+
+
   var tripRef = db.collection("trips");
-
-function createTrip(){
-
-  userfb = firebase.auth().currentUser;
-  emailRef = userfb.email;
+  var userOBJ;
   
-  tripRef.doc(tripName.value).set({
-    tripName: tripName.value,
-    mainUser: emailRef
-    
+function getUser(emailstr){
+  
+    const col = db.collection("users");
+    const query = col.where('Email', '==', emailstr); //add current user email to grab it
+    query.get().then(snapshot=> {
+      snapshot.docs.forEach(doc =>{
+        console.log(doc.data().First)
+        userOBJ = doc.data()
+        createTripCallback()
+      })
   })
-  .then((emailRef) => {
-    console.log("Document written with ID: ", emailRef);
+  }
+  
+function createTripCallback(){
+
+tripRef.doc(tripName.value).set({
+  TripName: tripName.value,
+  TripHost: emailRef,
+  Members: { [userOBJ.First] : 0 },
+  Expenses: {}
+})
+.then((emailRef) => {
+  console.log("Document written with ID: ", emailRef);
 
 })
 .catch((error) => {
-    console.error("Error adding document: ", error);
+  console.error("Error adding document: ", error);
 });
-  userfb = firebase.auth().currentUser;
-  emailRef = userfb.email;
-  
-  userRef.doc(emailRef).update({
-    trip1: tripName.value
+userfb = firebase.auth().currentUser;
+emailRef = userfb.email;
 
-    
-  })
-  .then((emailRef) => {
-    console.log("Document written with ID: ", emailRef);
+userRef.doc(emailRef).update({
+  trips: firebase.firestore.FieldValue.arrayUnion(tripName.value)
+
+  
+})
+.then((emailRef) => {
+  console.log("Document written with ID: ", emailRef);
 
 })
 
 
 alert("added trip");
+}
+var emailRef
+
+function createTrip(){
+  var userfb = firebase.auth().currentUser;
+  emailRef = userfb.email
+  getUser(emailRef)
+  
+  
 }
