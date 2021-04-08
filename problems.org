@@ -7,7 +7,7 @@
   - [ ] adding trips
   - [ ] completing trips
   - [ ] navigation between trips
-- [ ] refactor navbar
+- [X] refactor repeated stuff
 - [X] sign up page looks awful; needs redesign
 - [ ] rejection of signup happens after saying you signed up successfully
 - [ ] user should be able to log in with username
