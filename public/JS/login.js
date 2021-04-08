@@ -47,6 +47,7 @@ const firebaseConfig = {
       if(user){
           var email = user.email;
           alert("Active User " + email);
+          sessionStorage.setItem("userEmail", email)
           
           
       } else{

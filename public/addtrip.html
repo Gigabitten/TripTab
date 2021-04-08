@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <title>TripTab</title>
+</head>
+<body>
+    <div class="row">
+        <div class="column left">
+        </div>
+        <div class="column middle">
+            <h1>TripTab</h1>
+        </div>
+        <div class="column right">
+        </div>
+      </div>
+    
+    
+      <br><br><br><br>
+      <div class="topnav">
+        <a class="button" href="index.html">Home</a>
+        <a class="button" href="main.html">Main</a>
+        <a class="button" href="about.html">About</a>
+      </div>
+      <br><br><br><br>
+      <input type="text" placeholder="Trip Name" id="tripName"/>
+
+
+      <button onclick="createTrip()" id="addTrip">Create Trip</button>
+
+      <script type="text/javascript" src="/__/firebase/8.3.0/firebase-app.js"></script>
+      <script type="text/javascript" src="/__/firebase/8.3.0/firebase-analytics.js"></script>
+      <script type="text/javascript" src="/__/firebase/init.js"></script>
+      <script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+      <script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+      <script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.3.0/firebase-analytics.js"></script>
+      <script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+      <script type="text/javascript" src="JS/addTrip.js"></script>
+
+
+</body>
+</html>
