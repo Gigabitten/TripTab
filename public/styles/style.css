@@ -1,70 +1,97 @@
 html, body {
-  background-color: #1f1f1e;
-  font-family: Verdana;
-  height: 100%;
+    background-color: #1f1f1e;
+    font-family: Verdana;
+    height: 100%;
 }
 
 h1 {
-  text-align: center;
-  font-size: 95px;
-  text-decoration: underline;
-  color: #ececec;
+    text-align: center;
+    font-size: 95px;
+    text-decoration: underline;
+    color: #ececec;
 }
 
 h2 {
-  text-align: center;
-  font-size: 45px;
-  color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 45px;
+    color: rgb(0, 0, 0);
 }
 
 h6 {
-  text-align: right;
-  font-size: 14px;
-  color: #e6e6e6;
+    text-align: right;
+    font-size: 14px;
+    color: #e6e6e6;
+}
+
+#top {
+    background-image: url("img/ban.jpg");
+    background-position: center;    
+    width: 100%;    
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr auto repeat(3, 75px) 1fr;
+    grid-template-rows: 1fr repeat(3, 14%) 1fr;
+    gap: 10px 10px;
+    justify-items: center;
+    align-items: center;
+    grid-template-areas:
+        ". banner . . ." 
+        ". banner email email email"
+        ". banner password password password"
+        ". banner buttons buttons buttons"
+        ". banner . . .";
+}
+
+#banner {
+    grid-area: banner;
+}
+
+#email, #password, #buttons {
+    justify-self: stretch;
+}
+
+#email {
+    grid-area: email;
+}
+
+#password {
+    grid-area: password;
+}
+
+#buttons {
+    grid-area: buttons;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .button {
-  border: black;
-  border-radius: 10px;
-  border-style: solid;
-  background-color: #1f1f1f;
-  color: #d8d8d8;
-  font-size: 28px;
-  padding: 25px;
+    border: black;
+    border-radius: 10px;
+    border-style: solid;
+    background-color: #1f1f1f;
+    color: #d8d8d8;
+    font-size: 28px;
+    padding: 25px;
 }
 
 .topnav a.button:hover {
-  background-color: white;
-  color: black;
+    background-color: white;
+    color: black;
 }
 
 .topnav {
-  width: 100%;
+    width: 100%;
 }
 
 .column{
-  padding: 15px;
-  display: table-cell;
-  
-}
-
-.right {
-  background-color: #636363;
-  text-align: right;
-  font-size: 18px;    
-  width: 20%;
+    padding: 15px;
+    display: table-cell;
 }
 
 #about-text {
     color: #F0F8FF;
-}
-
-.left {
-  width: 80%;
-  background-image: url("img/ban.jpg");
-  background-position: center;
-  height: 100%;
-  
 }
 
 #signupInputs {
@@ -82,32 +109,32 @@ td {
 }
 
 .row {
-  display: table;
-  width: 100%;
+    display: table;
+    width: 100%;
 }
 
 .row:after {
-  content: "";
-  display: table;
-  clear: both;
+    content: "";
+    display: table;
+    clear: both;
 }
 
 .center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 60%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
 }
 .rowMain {
-  display: table;
-  width: 100%;
-  table-layout: fixed;
-  padding-top: 20px;
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    padding-top: 20px;
 }
 
 .mainCol1 {
     width: 15%;
-  
+    
     display: table-cell;
 }
 
@@ -129,10 +156,10 @@ footer {
 }
 
 h6:hover{
-  color: red;
-  font-size: 15px;
+    color: red;
+    font-size: 15px;
 }
 
-  a {
-      text-decoration: none;
-  }
+a {
+    text-decoration: none;
+}
