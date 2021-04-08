@@ -87,3 +87,8 @@ if (currentTrip !=null){
   getTrip(currentTrip)
 }
 
+function signOut(){      
+  auth.signOut();
+  alert("Signed Out");
+  window.location.href = "index.html";
+}

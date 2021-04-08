@@ -67,13 +67,13 @@ h6 {
 }
 
 .button {
-    border: black;
-    border-radius: 10px;
-    border-style: solid;
-    background-color: #1f1f1f;
-    color: #d8d8d8;
-    font-size: 28px;
-    padding: 25px;
+  border: black;
+  border-radius: 10px;
+  border-style: solid;
+  background-color: rgb(47,55,26);
+  color: rgb(194,200,209);
+  font-size: 28px;
+  padding: 25px;
 }
 
 .topnav a.button:hover {
@@ -191,7 +191,7 @@ a {
   }
   /* Style The Dropdown Button */
 .selecttripdropbtn {
-  background-color: #4CAF50;
+  background-color: rgb(47,55,26);
   color: white;
   padding: 16px;
   font-size: 16px;
@@ -234,4 +234,24 @@ a {
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .selecttripdropdown:hover .dropbtn {
   background-color: #3e8e41;
+}
+table, th, tr, td{
+  background-color: rgb(77, 96, 117);
+  border-radius: 5px;
+  padding: 10px;
+  border: solid 5px black;
+}
+
+th, td {
+  width: 500px;
+}
+th{
+  font-size: x-large;
+  color: rgb(180, 180, 180);
+}
+.ballsDeep{
+  width: 50%;
+}
+.elbowDeep{
+  width: 100%;
 }

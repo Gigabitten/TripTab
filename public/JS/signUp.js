@@ -22,13 +22,16 @@ const firebaseConfig = {
 
 function signUp(){
 
-  emailRef = document.getElementById('email').value;
-  
+  var temp = email.value;
+  emailRef = temp.toLowerCase()
+
+const promise = auth.createUserWithEmailAndPassword(email.value, password.value)
+.then((userCredential) => {
   userRef.doc(emailRef).set({
     First: firstName.value,
     Last: lastName.value,
     DisplayName: displayName.value,
-    Email: email.value
+    Email: emailRef
 
     
   })
@@ -40,7 +43,12 @@ function signUp(){
     console.error("Error adding document: ", error);
 });
 
-const promise = auth.createUserWithEmailAndPassword(email.value, password.value);
+}).catch((error) => {
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  alert(errorMessage)
+})
 promise.catch(e => alert(e.message));
+console.log(promise)
 alert("Signed Up");
 }

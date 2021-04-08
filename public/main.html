@@ -23,76 +23,55 @@
       $("#nav").load("nav.html");
     </script>
 
-    <div class="navbar">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <div class="dropdown">
-          <button class="dropbtn">Main 
-            <i class="fa fa-caret-down"></i>
-          </button>
+        <br><br><br>
+        <div class ="row">
+        <div class="selecttripdropdown">
+          <a class="selecttripdropbtn" style="left:50%">Pick/Add a Trip</a>
           <div class="dropdown-content">
-            <a href="#curT">Current Trips</a>
-            <a href="#newT">Add New Trip</a>
-            <a href="#closT">Close Out Trip</a>
+            <table style="background-color: white; border: 0px;" id = "tripDropdownTable">
+              <a href="AddTrip.html">Add Trip</a>
+
+            </table>
+    
           </div>
+
         </div>
-        <li><a href="about.html">About</a></li>
-      </ul>
-    </div>    
 
-    <br><br><br><br><br><br>
-    <Div id="curT">
-      <h2>Current Trips</h2>
-      <table class = "center" style="width:50%">
-        <caption>Trip A</caption>
-        <tr>
-          <th>Person</th>
-          <th>$</th>
-        </tr>
-        <tr>
-          <td>Bob</td>
-          <td>$100</td>
-        </tr>
-        <tr>
-          <td>Sarah</td>
-          <td>-$50</td>
-        </tr>
-        <tr>
-          <td>Steve</td>
-          <td>$25</td>
-        </tr>
-      </table>
-    </Div>
+        <a href = "addPerson.html" class="selecttripdropbtn" > Add Person</a>
+          <a class="selecttripdropbtn" href="addExpense.html" > Add Expense</a>
+            <a class="selecttripdropbtn  ">Close Trip</a>
+         
+      </div>
 
-    <br><br><br><br><br><br>
-    <Div id="newT">
-      <h2>New Trip</h2>
-      <table class="center" style="width:50%">
-        <caption>Trip B</caption>
-        <tr>
-          <th>Person</th>
-          <th>$</th>
-        </tr>
-      </table>
-    </Div>
+  
+            <br><br><br>
+            <div>
+            <table id="membersTable" class = "center" >
+              <caption>Trip 1 People</caption>
+                <tr>
+                  <th class="ballsDeep">Person</th>
+                  <th class="elbowDeep">$</th>
+                </tr>
+          
+                
+                </table>
+              </div>
+                <br>
+              
+                <br><br>
 
-
-    <br><br><br><br><br><br>
-    <Div id="closT">
-      <h2>Close Trip</h2>
-      <table class ="center" style="width:50%">
-        <caption>Trip C</caption>
-        <tr>
-          <th>Person</th>
-          <th>$</th>
-        </tr>
-        <tr>
-          <td>Steve</td>
-          <td>$15</td>
-        </tr>
-      </table>
-    </Div>
-
+                  <table id="expenseTable" class = "center" >
+                
+                <caption>Trip 1 Expenses</caption>
+                <tr>
+                  <th>Expense</th>
+                  <th>$</th>
+                  <th>Who Paid?</th>
+                  <th>Who Owes?</th>
+                </tr>
+              
+                </table>
+              <br><br><br><br><br><br><br><br><br><br><br><br>
 
     <script src="/__/firebase/8.3.0/firebase-app.js"></script>
     <script src="/__/firebase/8.3.0/firebase-analytics.js"></script>

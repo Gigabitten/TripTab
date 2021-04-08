@@ -68,3 +68,8 @@ function addPerson(){
   getUser(emailRef, tripName)
   
 }
+function signOut(){      
+  auth.signOut();
+  alert("Signed Out");
+  window.location.href = "index.html";
+}

@@ -26,7 +26,6 @@ function addExpense(){
   var tripName = sessionStorage.getItem("currentTrip")
   userfb = firebase.auth().currentUser;
   emailRef = userfb.email;
-  firstRef = userfb.Name;
   exName = expenseName.value
   price = expensePrice.value
   whoPaid = expenseWhoPaid.value
@@ -53,4 +52,9 @@ function addExpense(){
 
 
 alert("added expense to " + tripName);
+}
+function signOut(){      
+  auth.signOut();
+  alert("Signed Out");
+  window.location.href = "index.html";
 }
