@@ -39,7 +39,7 @@ function addPersonCallback(emailstr, tripName){
 
   tripRef.doc(tripName).set({
     Members: {
-      [userOBJ.First] : 0 
+      [userOBJ.DisplayName] : 0 
     }
   }, {merge: true})
   .then((emailRef) => {

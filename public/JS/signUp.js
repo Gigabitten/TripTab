@@ -22,10 +22,10 @@ const firebaseConfig = {
 
 function signUp(){
 
-  var temp = email.value;
+  var temp = email1.value;
   emailRef = temp.toLowerCase()
-
-const promise = auth.createUserWithEmailAndPassword(email.value, password.value)
+  
+const promise = auth.createUserWithEmailAndPassword(email1.value, password1.value)
 .then((userCredential) => {
   userRef.doc(emailRef).set({
     First: firstName.value,
@@ -36,6 +36,9 @@ const promise = auth.createUserWithEmailAndPassword(email.value, password.value)
     
   })
   .then((emailRef) => {
+
+
+
     console.log("Document written with ID: ", emailRef);
 
 })

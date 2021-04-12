@@ -31,7 +31,6 @@ function getUserTrips(emailstr){
       var row = table.insertRow();
       //var cell1 = row.insertCell(0);
       row.innerHTML = '<a onclick=getTrip("' +trip[1] + '") href="#">' + trip[1] + "</a>";
-      console.log(doc.data());
       }
     })
 })
@@ -67,7 +66,7 @@ function getTrip(tripin){
           var price = row.insertCell(1)
           var whopaid = row.insertCell(2)
           var whoowes = row.insertCell(3)
-          console.log(expense)
+
           expensename.innerHTML = expense[1].Name;
           price.innerHTML = expense[1].Price;
           whopaid.innerHTML = expense[1].WhoPaid

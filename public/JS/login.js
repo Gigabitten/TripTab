@@ -46,7 +46,7 @@ const firebaseConfig = {
   auth.onAuthStateChanged(function(user){
       if(user){
           var email = user.email;
-          alert("Active User " + email);
+          //alert("Active User " + email);
           sessionStorage.setItem("userEmail", email)
           
           
