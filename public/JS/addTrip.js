@@ -42,7 +42,7 @@ function createTripCallback(){
 tripRef.doc(tripName.value).set({
   TripName: tripName.value,
   TripHost: emailRef,
-  Members: { [userOBJ.First] : 0 },
+  Members: { [userOBJ.DisplayName] : 0 },
   Expenses: {}
 })
 .then((emailRef) => {

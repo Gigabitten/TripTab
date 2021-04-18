@@ -16,7 +16,9 @@ h2 {
     font-size: 45px;
     color: rgb(0, 0, 0);
 }
-
+.dontcare:hover{
+  background-color: white;
+}
 h6 {
     text-align: right;
     font-size: 14px;

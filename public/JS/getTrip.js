@@ -68,22 +68,53 @@ function getTrip(tripin){
           var whoowes = row.insertCell(3)
 
           expensename.innerHTML = expense[1].Name;
+          expensename.classList.add("dontcare")
+          expensename.onclick = function(){
+            window.prompt("hello")
+          }
           price.innerHTML = expense[1].Price;
           whopaid.innerHTML = expense[1].WhoPaid
           whoowes.innerHTML = expense[1].WhoOwes
+          var totalexpenseusers = parseInt(expense[1].WhoOwes.length)
+          var peruserprice = 
+          parseFloat(expense[1].Price / (totalexpenseusers + 1))
+          //console.log(peruserprice);
+          //console.log(expense[1].WhoOwes)
+          for(var whoower = 0; whoower< expense[1].WhoOwes.length; whoower++){
+            //console.log(expense[1].WhoOwes[whoower])
+            
+            calculateTab(expense[1].WhoOwes[whoower], peruserprice);
+          }
+        
+            calculateTab(expense[1].WhoPaid,(totalexpenseusers * peruserprice) * -1);
+         
+      
+
         }
         
       })
   })
-
-
-
+}
+function calculateTab(person, expenseplus){
+  var membersTable = document.getElementById("membersTable")
+  for (var i = 1; i < membersTable.rows.length; i++){
+    var row = membersTable.rows[i].cells[0]
+    if(row.innerHTML == person){
+      console.log(parseFloat(membersTable.rows[i].cells[1].innerHTML))
+      
+      var num = parseFloat(membersTable.rows[i].cells[1].innerHTML) + parseFloat(expenseplus)
+      membersTable.rows[i].cells[1].innerHTML = num.toFixed(2)
+      console.log("hell")
+    }
+    
+  }
 }
 var email = sessionStorage.getItem("userEmail")
 getUserTrips(email);
 var currentTrip = sessionStorage.getItem("currentTrip")
 if (currentTrip !=null){
   getTrip(currentTrip)
+  
 }
 
 function signOut(){      

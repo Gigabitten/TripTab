@@ -28,9 +28,11 @@
       <br><br><br><br>
       <input type="text" placeholder="Expense Name" id="expenseName"/>
       <input type="text" placeholder="Expense Price" id="expensePrice"/>
-      <input type="text" placeholder="Who Paid" id="expenseWhoPaid"/>
-      <input type="text" placeholder="Who Owes" id="expenseWhoOwes"/>
 
+      <select name="WhoPaid" id="whoPaidbox" multiple>
+      </select>
+      <select name="WhoOwes" id="whoOwesbox" multiple>
+      </select>
       <button onclick='addExpense()' id="addExpense">Add Expense</button>
 
       <script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>

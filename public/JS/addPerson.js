@@ -59,7 +59,7 @@ userRef.doc(emailRef).set({
 })
 
 
-alert("added expense to " + tripName);
+alert("Added " + userOBJ.DisplayName +  " to " + tripName);
 }
 function addPerson(){
   var tripName = sessionStorage.getItem("currentTrip")
