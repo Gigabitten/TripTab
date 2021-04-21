@@ -24,7 +24,7 @@ const firebaseConfig = {
   function getTrip(tripin){
     sessionStorage.setItem("currentTrip", tripin)
     const col = db.collection("trips");
-    const query = col.where('TripName', '==', tripin); //add TripName instead of example to pull it
+    const query = col.where('TripName', '==', tripin); 
   
     query.get().then(snapshot=> {
         snapshot.docs.forEach(doc =>{
@@ -54,12 +54,15 @@ function addExpense(){
   exName = expenseName.value
   price = expensePrice.value
   whoPaid = whoPaidbox.value
-  whoOwes = whoOwesbox.value
+  
+  whoOwes = whoOwesbox.options[whoOwesbox.selectedIndex].value
   console.log(whoOwesbox.options)
   var whoOwesArr = []
   var select = document.getElementById("whoOwesbox");
   for (var i = 0; i< select.length; i++){
+    if (select[i].selected){
     whoOwesArr.push(select[i].value);
+    }
   }
 
   console.log(whoOwesArr)

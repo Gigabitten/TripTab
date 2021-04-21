@@ -30,12 +30,18 @@ function getUserTrips(emailstr){
       var table = document.getElementById("tripDropdownTable");
       var row = table.insertRow();
       //var cell1 = row.insertCell(0);
-      row.innerHTML = '<a onclick=getTrip("' +trip[1] + '") href="#">' + trip[1] + "</a>";
+      var tripnamers = trip[1]
+      console.log(trip[1])
+      var linkstring = "<a onclick=getTrip(\'" + encodeURIComponent(trip[1]) + "\') href='#'>" + trip[1] + "</a>";
+      console.log(linkstring)
+      row.innerHTML = linkstring
       }
     })
 })
 }
 function getTrip(tripin){
+  tripin = decodeURIComponent(tripin)
+  console.log(tripin);
   sessionStorage.setItem("currentTrip", tripin)
   
   var jsondata
@@ -76,10 +82,9 @@ function getTrip(tripin){
           whopaid.innerHTML = expense[1].WhoPaid
           whoowes.innerHTML = expense[1].WhoOwes
           var totalexpenseusers = parseInt(expense[1].WhoOwes.length)
-          var peruserprice = 
-          parseFloat(expense[1].Price / (totalexpenseusers + 1))
-          //console.log(peruserprice);
-          //console.log(expense[1].WhoOwes)
+          var peruserprice = parseFloat(expense[1].Price / (totalexpenseusers + 1))
+          console.log("perUserPrice: " + peruserprice);
+          console.log(expense[1].WhoOwes.length)
           for(var whoower = 0; whoower< expense[1].WhoOwes.length; whoower++){
             //console.log(expense[1].WhoOwes[whoower])
             
@@ -87,8 +92,6 @@ function getTrip(tripin){
           }
         
             calculateTab(expense[1].WhoPaid,(totalexpenseusers * peruserprice) * -1);
-         
-      
 
         }
         
@@ -104,7 +107,7 @@ function calculateTab(person, expenseplus){
       
       var num = parseFloat(membersTable.rows[i].cells[1].innerHTML) + parseFloat(expenseplus)
       membersTable.rows[i].cells[1].innerHTML = num.toFixed(2)
-      console.log("hell")
+
     }
     
   }
