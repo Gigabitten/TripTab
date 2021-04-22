@@ -30,7 +30,6 @@ function getUser(emailstr){
     const query = col.where('Email', '==', emailstr); //add current user email to grab it
     query.get().then(snapshot=> {
       snapshot.docs.forEach(doc =>{
-        console.log(doc.data().First)
         userOBJ = doc.data()
         createTripCallback()
       })

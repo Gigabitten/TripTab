@@ -29,16 +29,16 @@ const firebaseConfig = {
     query.get().then(snapshot=> {
         snapshot.docs.forEach(doc =>{
           //console.log(doc.id, doc.data())
+          userDisplayName = sessionStorage.getItem("userDisplayName");
+          console.log(userDisplayName);
          for (var member of Object.entries(doc.data().Members)){
+           if(member[0] != userDisplayName){
           var opt = document.createElement("option");
           opt.text = member[0];
           opt.value = member[0];
           whoOwesbox.add(opt);
-
-          var opt2 = document.createElement("option");
-          opt2.text = member[0];
-          opt2.value = member[0];
-          whoPaidbox.add(opt2);
+           }
+         
          }
           
         })
@@ -47,13 +47,30 @@ const firebaseConfig = {
   
   
   }
-function addExpense(){
+  var userOBJ;
+  function getUser(emailstr){
+  
+    const col = db.collection("users");
+    const query = col.where('Email', '==', emailstr); //add current user email to grab it
+    query.get().then(snapshot=> {
+      snapshot.docs.forEach(doc =>{
+        userOBJ = doc.data()
+        addExpenseCallback()
+      })
+  })
+  }
   var tripName = sessionStorage.getItem("currentTrip")
+
+function addExpense(){
   userfb = firebase.auth().currentUser;
   emailRef = userfb.email;
+  getUser(emailRef)
+}
+function addExpenseCallback(){
+
   exName = expenseName.value
   price = expensePrice.value
-  whoPaid = whoPaidbox.value
+  whoPaid = userOBJ.DisplayName
   
   whoOwes = whoOwesbox.options[whoOwesbox.selectedIndex].value
   console.log(whoOwesbox.options)
@@ -85,12 +102,12 @@ function addExpense(){
     console.error("Error adding document: ", error);
 });
 
+}
 
 
 
 
 //window.location.href ="main.html";
-}
 function signOut(){      
   auth.signOut();
   alert("Signed Out");

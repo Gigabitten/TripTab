@@ -38,17 +38,28 @@ const firebaseConfig = {
   function signOut(){      
       auth.signOut();
       alert("Signed Out");
+      sessionStorage.clear();
       window.location.href = "index.html";
   }
+  var db = firebase.firestore();
+  function getUser(emailstr){
   
-  
+    const col = db.collection("users");
+    const query = col.where('Email', '==', emailstr); //add current user email to grab it
+    query.get().then(snapshot=> {
+      snapshot.docs.forEach(doc =>{
+        sessionStorage.setItem("userDisplayName", doc.data().DisplayName);
+        
+      })
+  })
+  }
   
   auth.onAuthStateChanged(function(user){
       if(user){
           var email = user.email;
           //alert("Active User " + email);
           sessionStorage.setItem("userEmail", email)
-          
+          getUser(email)
           
       } else{
           if(window.location.href.indexOf("main.html") != -1) {

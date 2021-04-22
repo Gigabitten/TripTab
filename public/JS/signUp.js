@@ -55,3 +55,13 @@ promise.catch(e => alert(e.message));
 console.log(promise)
 alert("Signed Up");
 }
+
+function signIn(){
+  localStorage.setItem("userEmail", email.value.toLowerCase())
+   const promise = auth.signInWithEmailAndPassword(email.value, password.value)
+   .then((userCredential) => {
+     window.location.href = "account.html";
+   })
+   promise.catch(e => alert(e.message));
+   console.log(promise);
+}

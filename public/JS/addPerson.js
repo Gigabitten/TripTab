@@ -28,6 +28,9 @@ const firebaseConfig = {
     const col = db.collection("users");
     const query = col.where('Email', '==', emailstr); //add current user email to grab it
     query.get().then(snapshot=> {
+      if(snapshot.docs.length != 1){
+        alert("User not Found")
+      }
       snapshot.docs.forEach(doc =>{
         console.log(doc.data().First)
         userOBJ = doc.data()
