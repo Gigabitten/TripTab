@@ -126,7 +126,6 @@ function signOut(){
   window.location.href = "index.html";
 }
 
-<<<<<<< HEAD
 auth.onAuthStateChanged(function(user){
   if(user){
       document.getElementById("mainTab").style.display = "show";
@@ -138,34 +137,4 @@ auth.onAuthStateChanged(function(user){
   } else{
       window.location.href = "index.html";
   }
-=======
-function getUser(emailstr){
-  
-  const col = db.collection("users");
-  const query = col.where('Email', '==', emailstr); //add current user email to grab it
-  query.get().then(snapshot=> {
-    snapshot.docs.forEach(doc =>{
-      sessionStorage.setItem("userDisplayName", doc.data().DisplayName);
-      
-    })
-})
-}
-
-auth.onAuthStateChanged(function(user){
-    if(user){
-        var email = user.email;
-        //alert("Active User " + email);
-        sessionStorage.setItem("userEmail", email)
-        getUser(email)
-        
-    } else{
-        if(window.location.href.indexOf("main.html") != -1) {
-            window.location.href = "index.html";
-        }
-        console.log(window.location.href)
-    
-      
-        //no user is signed in
-    }
->>>>>>> cd16210abb63dcc7f427a0b6ebc2d71e99a7446c
 });

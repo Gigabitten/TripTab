@@ -56,7 +56,6 @@ console.log(promise)
 alert("Signed Up");
 }
 
-<<<<<<< HEAD
 auth.onAuthStateChanged(function(user){
   if(user){
       document.getElementById("mainTab").style.display = "show";
@@ -81,8 +80,6 @@ auth.onAuthStateChanged(function(user){
 });
 
 
-=======
->>>>>>> cd16210abb63dcc7f427a0b6ebc2d71e99a7446c
 function signIn(){
   localStorage.setItem("userEmail", email.value.toLowerCase())
    const promise = auth.signInWithEmailAndPassword(email.value, password.value)
