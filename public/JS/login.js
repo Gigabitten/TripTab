@@ -65,6 +65,7 @@ const firebaseConfig = {
           document.getElementById("password").style.display = "none";
           document.getElementById("signUp").style.display = "none";
           document.getElementById("signIn").style.display = "none";
+          document.getElementById("account").style.display = "show";
           
           
       } else{
@@ -77,6 +78,7 @@ const firebaseConfig = {
           document.getElementById("password").style.display = "show";
           document.getElementById("signUp").style.display = "show";
           document.getElementById("signIn").style.display = "show";
+          document.getElementById("account").style.display = "none";
       
         
           //no user is signed in
