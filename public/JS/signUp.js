@@ -24,6 +24,7 @@ function signUp(){
 
   var temp = email1.value;
   emailRef = temp.toLowerCase()
+  localStorage.setItem('userEmail', emailRef);
   
 const promise = auth.createUserWithEmailAndPassword(email1.value, password1.value)
 .then((userCredential) => {
@@ -40,7 +41,7 @@ const promise = auth.createUserWithEmailAndPassword(email1.value, password1.valu
 
 
     console.log("Document written with ID: ", emailRef);
-
+    window.location.href ="account.html";
 })
 .catch((error) => {
     console.error("Error adding document: ", error);
@@ -64,6 +65,7 @@ auth.onAuthStateChanged(function(user){
       document.getElementById("password").style.display = "none";
       document.getElementById("signUp").style.display = "none";
       document.getElementById("signIn").style.display = "none";
+      document.getElementById("account").style.display = "show";
       
       
   } else{
@@ -73,6 +75,7 @@ auth.onAuthStateChanged(function(user){
       document.getElementById("password").style.display = "show";
       document.getElementById("signUp").style.display = "show";
       document.getElementById("signIn").style.display = "show";
+      document.getElementById("account").style.display = "none";
   
     
       //no user is signed in
