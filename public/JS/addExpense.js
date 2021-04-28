@@ -83,6 +83,7 @@ function addExpenseCallback(){
   }
 
   console.log(whoOwesArr)
+
   tripRef.doc(tripName).set({
     Expenses: {
       [exName]: {

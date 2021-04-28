@@ -71,11 +71,26 @@ function getTrip(tripin){
           var price = row.insertCell(1)
           var whopaid = row.insertCell(2)
           var whoowes = row.insertCell(3)
-
+          
           expensename.innerHTML = expense[1].Name;
+          expensename.innerHTML += '<span class="dontcaretext">Delete This Expense</span>'
           expensename.classList.add("dontcare")
+          expensename.id = expense[1].Name;
           expensename.onclick = function(){
-            window.prompt("hello")
+            if(confirm('are you sure you want to delete this expense?')){
+              col.doc(tripin).set({
+                  Expenses: {
+                    [this.id]: firebase.firestore.FieldValue.delete()
+                        
+                  }
+                }, {merge: true})
+                .then(
+                  getTrip(tripin)
+                )
+            }
+            else{
+
+            }
           }
           price.innerHTML = expense[1].Price;
           whopaid.innerHTML = expense[1].WhoPaid
@@ -125,15 +140,27 @@ function signOut(){
   sessionStorage.clear();
   window.location.href = "index.html";
 }
-
+function setUserDisplaySessionVar(emailstr){
+  
+  const col = db.collection("users");
+  const query = col.where('Email', '==', emailstr); //add current user email to grab it
+  query.get().then(snapshot=> {
+    snapshot.docs.forEach(doc =>{
+      sessionStorage.setItem("userDisplayName", doc.data().DisplayName);
+      
+    })
+})
+}
 auth.onAuthStateChanged(function(user){
   if(user){
+      var email = user.email;
       document.getElementById("mainTab").style.display = "show";
       document.getElementById("signOut").style.display = "show";
       document.getElementById("email").style.display = "none";
       document.getElementById("password").style.display = "none";
       document.getElementById("signUp").style.display = "none";
       document.getElementById("signIn").style.display = "none";
+      setUserDisplaySessionVar(email);
   } else{
       window.location.href = "index.html";
   }

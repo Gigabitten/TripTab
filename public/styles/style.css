@@ -17,7 +17,24 @@ h2 {
     color: rgb(0, 0, 0);
 }
 .dontcare:hover{
-  background-color: white;
+  background-color: red;
+
+}
+.dontcare .dontcaretext{
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1; 
+}
+.dontcare:hover .dontcaretext{
+  visibility: visible;
 }
 h6 {
     text-align: right;
@@ -116,7 +133,7 @@ h6 {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 60%;
+    width: 80%;
 }
 .rowMain {
     display: table;
@@ -235,12 +252,22 @@ a:hover {
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .selecttripdropdown:hover .dropbtn {
   background-color: #3e8e41;
+  cursor: pointer;
 }
 table, tr {
   background-color: rgb(77, 96, 117);
   border-radius: 5px;
   border: solid 3px rgb(173, 173, 173);
   
+}
+.addpersonbutton{
+  background-color: #026b72;
+  text-align: center;
+  font-weight: bold;
+}
+.addpersonbutton:hover {
+  cursor: pointer;
+  background-color:  #f1f1f1;
 }
 
 th {
@@ -266,6 +293,12 @@ td {
   float: right;
 }
 
+.addstufftable{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
 button {
   border: 2px solid rgb(173, 173, 173);
   background-color: #1f1f1e;
@@ -290,4 +323,12 @@ input {
   border-radius: 5px;
   background-color: #1f1f1e;
   color: rgb(157, 177, 185);
+}
+
+.emailtextbox{
+  font-size: large;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
 }

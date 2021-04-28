@@ -57,6 +57,7 @@ const firebaseConfig = {
   auth.onAuthStateChanged(function(user){
       if(user){
           var email = user.email;
+          getUser(email);
           //alert("Active User " + email);
           sessionStorage.setItem("userEmail", email)
           document.getElementById("mainTab").style.display = "show";
