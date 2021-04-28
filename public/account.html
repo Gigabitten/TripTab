@@ -7,6 +7,56 @@
     <link rel="stylesheet" type="text/css" href="styles/style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <title>TripTab</title>
+
+    <style>
+      .accountInfo {
+          border: 5px solid;
+          border-color:rgb(77, 96, 117);
+          border-radius: 5px;
+          background-color: #c4c4c4;
+          width: 50%;
+          margin-right: auto;
+          margin-left: auto;
+      }
+  
+      .changePass {
+          width: 45%;
+          float: right;
+          text-align: center;
+          border: 5px solid black;
+          border-radius: 5px;
+          margin-left: auto;
+          margin-right: auto;
+          background-color: rgb(77, 96, 117);
+          margin-bottom: 40px;
+      }
+  
+      .changeName {
+          width: 45%;
+          float: left;
+          text-align: center;
+          border: 5px solid rgb(77, 96, 117);
+          border-radius: 5px;
+          margin-left: auto;
+          margin-right: auto;
+          background-color: black;
+          margin-bottom: 40px;    
+      }
+  
+      input {
+          font-size: 20px;
+          margin-top: 5px;
+          margin-left: 5px;
+          margin-right: 5px;
+          margin-bottom: 30px;
+          padding: 5px;
+      }
+  
+      h2 {
+          color: #fbf6f3;
+      }
+  </style>
+
 </head>
 <body>
   <div id="top"></div>
@@ -20,10 +70,35 @@
   <script type="text/javascript">
     $("#nav").load("nav.html");
   </script>
-      <h2 style="color:pink">First Name: <a id="firstName"> </a> </h2>
-      <h2 style="color:purple">Last Name: <a id="lastName"> </a> </h2>
-      <h2 style="color:green">Display Name: <a id="dispName"> </a> </h2>
 
+
+<h2 style="font-size: 60px; text-decoration: underline; color: #c4c4c4;">Current User Info</h2>    
+    
+    <div class="accountInfo">
+        <h2 style="color:#161b2e">First Name: <a id="firstName"> </a> </h2>
+        <h2 style="color:#161b2e">Last Name: <a id="lastName"> </a> </h2>
+        <h2 style="color:#161b2e">Display Name: <a id="dispName"> </a> </h2>
+    </div>
+
+    <h2 style="font-size: 60px; text-decoration: underline;">Update User Info</h2>
+
+    <div class="row">
+        <div class="changeName">
+            <h2 style=" font-size:30px">Change Display Name</h2>
+            <input type="text" placeholder="New Display Name" id="displayName">
+            <button onclick="updateDisp()" id="updateDisp">Save Changes</button>
+        </div>
+        <div class="changePass">
+            <h2 style="font-size: 30px;">Change Password</h2>
+            <input type="password" placeholder="New Password" id="passNew">
+            <button style="border: 3px solid black;" onclick="updatePass()" id="updatePass">Save Changes</button>
+
+            <h2 style="font-size: 30px;">Change Email</h2>
+            <input type="text" placeholder="New Email" id="emailNew">
+            <button style="border: 3px solid black;" onclick="updateEmail()" id="updateEmail">Save Changes</button>
+        </div>
+
+    </div>
       <script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
       <script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
       <script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.3.0/firebase-analytics.js"></script>

@@ -69,10 +69,10 @@ h6 {
 }
 
 .button {
-  border: 3px solid rgb(173, 173, 173);
+  border: 3px solid rgb(77, 96, 117);
   border-radius: 10px;
   background-color: rgb(47,55,26);
-  color: rgb(194,200,209);
+  color: #c4c4c4;
   font-size: 28px;
   padding: 25px;
 }
@@ -80,6 +80,7 @@ h6 {
 .topnav a.button:hover {
     background-color: white;
     color: black;
+    border: 3px solid black;
 }
 
 .topnav {
