@@ -26,14 +26,29 @@
         <a class="button" href="about.html">About</a>
       </div>
       <br><br><br><br>
-      <input type="text" placeholder="Expense Name" id="expenseName"/>
-      <input type="text" placeholder="Expense Price" id="expensePrice"/>
+     
+     
 
      
-      <select name="WhoOwes" id="whoOwesbox" multiple>
-      </select>
-      <button onclick='addExpense()' id="addExpense">Add Expense</button>
-
+      
+      
+      <table class="center">
+        <tr>
+          <td>
+            <input class="emailtextbox" type="text" placeholder="Expense Name" id="expenseName"/>
+          </td>
+          <td>
+            <input class="emailtextbox" type="text" placeholder="Expense Price" id="expensePrice"/>
+          </td>
+          <td>
+            <select style="width: 100px; font-size: large;" name="WhoOwes" id="whoOwesbox" multiple>
+            </select>
+          </td>
+          <td onclick='addExpense()' class="addpersonbutton">
+           Add Expense
+          </td>
+        </tr>
+      </table>
       <script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
       <script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
       <script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.3.0/firebase-analytics.js"></script>

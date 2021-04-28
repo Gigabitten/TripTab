@@ -125,7 +125,7 @@ td {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 60%;
+    width: 80%;
 }
 .rowMain {
     display: table;
@@ -236,12 +236,22 @@ a {
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .selecttripdropdown:hover .dropbtn {
   background-color: #3e8e41;
+  cursor: pointer;
 }
 table, th, tr, td{
   background-color: rgb(77, 96, 117);
   border-radius: 5px;
   padding: 10px;
   border: solid 5px black;
+}
+.addpersonbutton{
+  background-color: #026b72;
+  text-align: center;
+  font-weight: bold;
+}
+.addpersonbutton:hover {
+  cursor: pointer;
+  background-color:  #f1f1f1;
 }
 
 th, td {
@@ -256,4 +266,14 @@ th{
 }
 .elbowDeep{
   width: 100%;
+}
+input{
+
+}
+.emailtextbox{
+  font-size: large;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
 }
