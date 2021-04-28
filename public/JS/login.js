@@ -57,15 +57,27 @@ const firebaseConfig = {
   auth.onAuthStateChanged(function(user){
       if(user){
           var email = user.email;
+          getUser(email);
           //alert("Active User " + email);
           sessionStorage.setItem("userEmail", email)
-          getUser(email)
+          document.getElementById("mainTab").style.display = "show";
+          document.getElementById("signOut").style.display = "show";
+          document.getElementById("email").style.display = "none";
+          document.getElementById("password").style.display = "none";
+          document.getElementById("signUp").style.display = "none";
+          document.getElementById("signIn").style.display = "none";
+          
           
       } else{
           if(window.location.href.indexOf("main.html") != -1) {
               window.location.href = "index.html";
           }
-          console.log(window.location.href)
+          document.getElementById("mainTab").style.display = "none";
+          document.getElementById("signOut").style.display = "none";
+          document.getElementById("email").style.display = "show";
+          document.getElementById("password").style.display = "show";
+          document.getElementById("signUp").style.display = "show";
+          document.getElementById("signIn").style.display = "show";
       
         
           //no user is signed in
