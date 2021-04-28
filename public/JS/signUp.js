@@ -55,3 +55,37 @@ promise.catch(e => alert(e.message));
 console.log(promise)
 alert("Signed Up");
 }
+
+auth.onAuthStateChanged(function(user){
+  if(user){
+      document.getElementById("mainTab").style.display = "show";
+      document.getElementById("signOut").style.display = "show";
+      document.getElementById("email").style.display = "none";
+      document.getElementById("password").style.display = "none";
+      document.getElementById("signUp").style.display = "none";
+      document.getElementById("signIn").style.display = "none";
+      
+      
+  } else{
+      document.getElementById("mainTab").style.display = "none";
+      document.getElementById("signOut").style.display = "none";
+      document.getElementById("email").style.display = "show";
+      document.getElementById("password").style.display = "show";
+      document.getElementById("signUp").style.display = "show";
+      document.getElementById("signIn").style.display = "show";
+  
+    
+      //no user is signed in
+  }
+});
+
+
+function signIn(){
+  localStorage.setItem("userEmail", email.value.toLowerCase())
+   const promise = auth.signInWithEmailAndPassword(email.value, password.value)
+   .then((userCredential) => {
+     window.location.href = "account.html";
+   })
+   promise.catch(e => alert(e.message));
+   console.log(promise);
+}

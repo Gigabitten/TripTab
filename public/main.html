@@ -8,6 +8,25 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>        
     <title>Document</title>
 
+    <style>
+      tr {
+        font-size: 20px;
+      }
+
+      .getColl {
+        width: 30%;
+        float: left;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .getColr {
+        width: 70%;
+        float: right;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    </style>
 
   </head>
   <body>
@@ -25,55 +44,43 @@
 
         <br><br><br>
         <div class ="row">
-        <div class="selecttripdropdown">
-          <a class="selecttripdropbtn" style="left:50%">Pick/Add a Trip</a>
-          <div class="dropdown-content">
-            <table style="background-color: white; border: 0px;" id = "tripDropdownTable">
-              <a href="addtrip.html">Add Trip</a>
-
-            </table>
-    
+          <div class="selecttripdropdown">
+            <a class="selecttripdropbtn" style="left:50%">Pick/Add a Trip</a>
+            <div class="dropdown-content">
+              <table style="background-color: white; border: 0px;" id = "tripDropdownTable">
+                <a href="addtrip.html">Add Trip</a>
+              </table>
+            </div>
           </div>
-
-        </div>
-
-        <a href = "addPerson.html" class="selecttripdropbtn" > Add Person</a>
+          <a href = "addPerson.html" class="selecttripdropbtn" > Add Person</a>
           <a class="selecttripdropbtn" href="addExpense.html" > Add Expense</a>
-            <a class="selecttripdropbtn  ">Close Trip</a>
+          <a class="selecttripdropbtn  ">Close Trip</a>
+         </div>
+         <br><br><br>
          
-      </div>
-
-  
-            <br><br><br>
-            <div>
-            <table id="membersTable" class = "center" >
-              <caption>Trip 1 People</caption>
+         <div style="margin-top: 50px;" class="row">
+            <div class="getColl">
+              <table style="margin-bottom: 40px;" id="membersTable" class = "center" >
+                <caption>Trip 1 People</caption>
                 <tr>
                   <th class="ballsDeep">Person</th>
                   <th class="elbowDeep">$</th>
                 </tr>
-          
-                
-                </table>
-              </div>
-                <br>
-              
-                <br><br>
-
-                  <table id="expenseTable" class = "center" >
-                
-                <caption>Trip 1 Expenses</caption>
-                <tr>
-                  <th>Expense</th>
-                  <th>$</th>
-                  <th>Who Paid?</th>
-                  <th>Who Owes?</th>
-                </tr>
-              
-                </table>
-              <br><br><br><br><br><br><br><br><br><br><br><br>
-
-
+              </table>
+            </div>
+          <div class="getColr">
+            <table style="margin-bottom: 200px;" id="expenseTable" class = "center" >
+              <caption>Trip 1 Expenses</caption>
+              <tr>
+                <th>Expense</th>
+                <th>$</th>
+                <th>Who Paid?</th>
+                <th>Who Owes?</th>
+              </tr>
+            </table>
+          </div>
+        </div>
+    
     <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>

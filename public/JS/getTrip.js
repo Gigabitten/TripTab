@@ -13,7 +13,6 @@ const firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
 
-
   const auth = firebase.auth();
 
   var db = firebase.firestore();
@@ -125,3 +124,16 @@ function signOut(){
   alert("Signed Out");
   window.location.href = "index.html";
 }
+
+auth.onAuthStateChanged(function(user){
+  if(user){
+      document.getElementById("mainTab").style.display = "show";
+      document.getElementById("signOut").style.display = "show";
+      document.getElementById("email").style.display = "none";
+      document.getElementById("password").style.display = "none";
+      document.getElementById("signUp").style.display = "none";
+      document.getElementById("signIn").style.display = "none";
+  } else{
+      window.location.href = "index.html";
+  }
+});

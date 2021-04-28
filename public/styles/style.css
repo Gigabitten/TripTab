@@ -69,9 +69,8 @@ h6 {
 }
 
 .button {
-  border: black;
+  border: 3px solid rgb(173, 173, 173);
   border-radius: 10px;
-  border-style: solid;
   background-color: rgb(47,55,26);
   color: rgb(194,200,209);
   font-size: 28px;
@@ -99,15 +98,6 @@ h6 {
 #signupInputs {
     margin: auto;
     width: 40%;
-}
-
-th {
-    text-align: right;
-}
-
-td {
-    text-align: left;
-    padding-left: 10px;
 }
 
 .row {
@@ -237,23 +227,58 @@ a {
 .selecttripdropdown:hover .dropbtn {
   background-color: #3e8e41;
 }
-table, th, tr, td{
+table, tr {
   background-color: rgb(77, 96, 117);
   border-radius: 5px;
-  padding: 10px;
-  border: solid 5px black;
+  border: solid 3px rgb(173, 173, 173);
+  
 }
 
-th, td {
-  width: 500px;
+th {
+  text-align: center;
+  border-bottom: solid 3px rgb(173, 173, 173);
+  margin: 0%;
+  padding-right: 50px;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
-th{
-  font-size: x-large;
-  color: rgb(180, 180, 180);
+td {
+  text-align: center;
 }
 .ballsDeep{
   width: 50%;
 }
 .elbowDeep{
   width: 100%;
+}
+
+.pushRight {
+  float: right;
+}
+
+button {
+  border: 2px solid rgb(173, 173, 173);
+  background-color: #1f1f1e;
+  color: rgb(157, 177, 185);
+  font-size: 22px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: rgb(157, 177, 185);
+  color: #1f1f1e;
+}
+
+input {
+  font-size: 20px;
+  padding: 7px;
+  border: 3px solid rgb(173, 173, 173);
+  border-radius: 5px;
+  background-color: #1f1f1e;
+  color: rgb(157, 177, 185);
 }
