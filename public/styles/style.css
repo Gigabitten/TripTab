@@ -2,8 +2,10 @@ html, body {
     background-color: #1f1f1e;
     font-family: Verdana;
     height: 100%;
+    /*
     cursor: url(https://cdn.custom-cursor.com/db/6084/32/food-and-drinks-eggplant-cursor.png), auto;
-}
+  */
+  }
 
 h1 {
     text-align: center;
