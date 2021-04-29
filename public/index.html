@@ -9,6 +9,28 @@
     <link rel="stylesheet" href="acount.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>    
     <title>TripTab</title>
+
+    <style>
+      .col {
+        width: 100%;
+        align-items: center;
+      }
+      .bigassbutton {
+        padding-left: 200px;
+        padding-right: 200px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        font-size: 45px;
+      }
+
+      .bigassbutton:hover {
+        color: black;
+        background-color: hotpink;
+        cursor: url(https://cdn.custom-cursor.com/db/6083/32/food-and-drinks-eggplant-pointer.png), auto;
+
+      }
+      
+    </style>
   </head>
 
   <body>
@@ -24,6 +46,18 @@
     <script type="text/javascript">
       $("#nav").load("nav.html");
     </script>
+<br><br><br><br><br>
+    <div class="row">
+      <div class="col">
+        <div class="center">
+          <button class="bigassbutton" onclick="signUp()" id="signUp">Sign Up</button>
+        </div>
+      </div>
+      <div class="col">
+
+      </div>
+    </div>
+
     <script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.3.0/firebase-analytics.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>

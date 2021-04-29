@@ -95,6 +95,7 @@ auth.onAuthStateChanged(function(user){
       document.getElementById("signUp").style.display = "none";
       document.getElementById("signIn").style.display = "none";
       document.getElementById("account").style.display = "show";
+      document.getElementById("homeTab").style.display = "none";
       
       
   } else{
@@ -108,7 +109,7 @@ auth.onAuthStateChanged(function(user){
       document.getElementById("signUp").style.display = "show";
       document.getElementById("signIn").style.display = "show";
       document.getElementById("account").style.display = "none";
-  
+      document.getElementById("homeTab").style.display = "show";
     
       //no user is signed in
   }

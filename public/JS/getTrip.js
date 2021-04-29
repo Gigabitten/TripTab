@@ -166,6 +166,7 @@ auth.onAuthStateChanged(function(user){
       document.getElementById("password").style.display = "none";
       document.getElementById("signUp").style.display = "none";
       document.getElementById("signIn").style.display = "none";
+      document.getElementById("homeTab").style.display = "none";
       setUserDisplaySessionVar(email);
   } else{
       window.location.href = "index.html";
