@@ -11,16 +11,18 @@
     <title>TripTab</title>
 
     <style>
+      body{
+        
+      }
       .col {
-        width: 100%;
+        width: 40%;
+        float:left;
         align-items: center;
+        padding-left: 10%;
       }
       .bigassbutton {
-        padding-left: 200px;
-        padding-right: 200px;
-        padding-top: 30px;
-        padding-bottom: 30px;
-        font-size: 45px;
+
+        font-size: 15px;
       }
 
       .bigassbutton:hover {
@@ -28,6 +30,11 @@
         background-color: hotpink;
         cursor: url(https://cdn.custom-cursor.com/db/6083/32/food-and-drinks-eggplant-pointer.png), auto;
 
+      }
+      .slogan{
+        font-size: 30px;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: white;
       }
       
     </style>
@@ -46,15 +53,16 @@
     <script type="text/javascript">
       $("#nav").load("nav.html");
     </script>
-<br><br><br><br><br>
+<br><br>
     <div class="row">
       <div class="col">
         <div class="center">
+          <h3 class="slogan">Splitting the tab on a trip can be a hastle, let TripTab do all the hard work for you and sign up today!</h3>
           <button class="bigassbutton" onclick="signUp()" id="signUp">Sign Up</button>
         </div>
       </div>
       <div class="col">
-
+          <img width="50%" src="styles/img/wallet.png">
       </div>
     </div>
 
