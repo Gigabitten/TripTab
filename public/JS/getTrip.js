@@ -39,10 +39,12 @@ function getUserTrips(emailstr){
 })
 }
 function getTrip(tripin){
+  document.getElementById("AU").style.display = "inline";
+  document.getElementById("AE").style.display = "inline";
   tripin = decodeURIComponent(tripin)
   console.log(tripin);
   sessionStorage.setItem("currentTrip", tripin)
-  
+  document.getElementById("curT").innerHTML = tripin;
   var jsondata
   const col = db.collection("trips");
   const query = col.where('TripName', '==', tripin); //add TripName instead of example to pull it
@@ -131,7 +133,11 @@ getUserTrips(email);
 var currentTrip = sessionStorage.getItem("currentTrip")
 if (currentTrip !=null){
   getTrip(currentTrip)
-
+  document.getElementById("AU").style.display = "inline";
+  document.getElementById("AE").style.display = "inline";
+} else {
+  document.getElementById("AU").style.display = "none";
+  document.getElementById("AE").style.display = "none";
 }
 
 function signOut(){      

@@ -6,50 +6,83 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>    
+
     <title>TripTab</title>
+
+    <style>
+          .fixit {
+          width: 100%;
+          float: left;
+          text-align: center;
+          border: 5px solid rgb(77, 96, 117);
+          border-radius: 5px;
+          margin-left: auto;
+          margin-right: auto;
+          background-color: black;
+          padding-bottom: 20px;
+          padding-left: 15px;
+          padding-right: 15px;
+          margin-bottom: 30px;    
+      }
+
+      h2 {
+          color: #ffffff;
+      }
+
+      select {
+        width: 200px;
+        font-size: 24px;
+        color: white;
+        background-color: rgb(95, 95, 95);
+        scrollbar-color: rgb(104, 104, 104);
+        scrollbar-base-color: rgb(29, 29, 29);
+        border-radius: 5px;
+        overflow: hidden;
+      }
+
+      .bloc {
+        display: inline-block;
+        vertical-align: top;
+        overflow: hidden;
+        border: solid grey 1px;
+        border-radius: 5px;
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+
+      .bloc select {
+        padding: 10px;
+        margin: -5px -20px -5px -5px;
+        }
+    </style>
 </head>
 <body>
-    <div class="row">
-        <div class="column left">
-        </div>
-        <div class="column middle">
-            <h1>TripTab</h1>
-        </div>
-        <div class="column right">
-        </div>
-      </div>
-    
-    
-      <br><br><br><br>
-      <div class="topnav">
-        <a class="button" href="index.html">Home</a>
-        <a class="button" href="main.html">Main</a>
-        <a class="button" href="about.html">About</a>
-      </div>
-      <br><br><br><br>
-     
-     
+  <div id="top"></div>
+  <script type="text/javascript">
+    $("#top").load("top.html");
+  </script>
+  
+  <br><br><br><br>
 
-     
-      
-      
-      <table class="center">
-        <tr>
-          <td>
-            <input class="emailtextbox" type="text" placeholder="Expense Name" id="expenseName"/>
-          </td>
-          <td>
-            <input class="emailtextbox" type="text" placeholder="Expense Price" id="expensePrice"/>
-          </td>
-          <td>
-            <select style="width: 100px; font-size: large;" name="WhoOwes" id="whoOwesbox" multiple>
-            </select>
-          </td>
-          <td onclick='addExpense()' class="addpersonbutton">
-           Add Expense
-          </td>
-        </tr>
-      </table>
+  <div id="nav"></div>
+  <script type="text/javascript">
+    $("#nav").load("nav.html");
+  </script>
+      <br><br><br><br>
+<div class="row">
+  <div class="center">
+      <div class="fixit">
+        <h2 style=" font-size:30px">Add New Expense</h2>
+        <input type="text" placeholder="Expense" id="expenseName">
+        <input type="text" placeholder="Cost ($22.50)" id="expensePrice">
+        <div class="bloc">
+            <select name="WhoOwes" id="whoOwesbox" multiple></select>
+        </div>
+            <button onclick="createTrip()">Create Trip</button>
+    </div>
+  </div>
+</div>
       <script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
       <script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
       <script type="text/javascript" src="https://www.gstatic.com/firebasejs/8.3.0/firebase-analytics.js"></script>

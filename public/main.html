@@ -27,6 +27,16 @@
         margin-left: auto;
         margin-right: auto;
       }
+      
+      h3 {
+        background-color: white;
+        text-align: center;
+        font-size: 30px;
+        text-decoration: underline;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-radius: 5px;
+      }
     </style>
 
   </head>
@@ -48,20 +58,26 @@
         <div class="selecttripdropdown">
           <a class="selecttripdropbtn" style="left:50%">Pick/Add a Trip</a>
           <div class="dropdown-content">
-            <table style="background-color: white; border: 0px;" id = "tripDropdownTable">
-              <a href="addtrip.html">Add Trip</a>
+            <table style="background-color: white; width: 100%;" id = "tripDropdownTable">
+              <th style="font-size: 18px; padding: 0%;"><a href="addtrip.html">Add Trip</a></th>
             </table>
           </div>
         </div>
 
-        <a href = "addPerson.html" class="selecttripdropbtn" > Add User</a>
-          <a class="selecttripdropbtn" href="addExpense.html" > Add Expense</a>
+        <a href = "addPerson.html"  id="AU" class="selecttripdropbtn" > Add User</a>
+          <a class="selecttripdropbtn" id="AE" href="addExpense.html" > Add Expense</a>
         
-         
+         <div class="row">
+           <div class="center">
+             <h1 id="curT"></h1>
+           </div>
+         </div>
+
+
          <div style="margin-top: 50px;" class="row">
     
             <div class="getColl">
-              <h3 style="background-color:white; text-align: center;">Running Tab</h3>
+              <div class="center"><h3 style="width: 100%;">Running Tab</h3></div>
               <table style="margin-bottom: 40px;" id="membersTable" class = "center" >
                 <tr>
                   <th class="ballsDeep">Person</th>
@@ -70,7 +86,7 @@
               </table>
             </div>
           <div class="getColr">
-            <h3 style="background-color:white; text-align: center;">Trip Expenses</h3>
+            <div class="center"><h3 style="width: 100%;">Trip Expenses</h3></div>
 
             <table style="margin-bottom: 200px;" id="expenseTable" class = "center" >
               <caption>Trip 1 Expenses</caption>

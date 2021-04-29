@@ -278,9 +278,14 @@ th {
   padding-left: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
+  color: white;
+  font-size: 25px;
+  font: bolder;
 }
 td {
   text-align: center;
+  color: white;
+  font-size: 22px;
 }
 .ballsDeep{
   width: 50%;
@@ -322,7 +327,7 @@ input {
   border: 3px solid rgb(173, 173, 173);
   border-radius: 5px;
   background-color: #1f1f1e;
-  color: rgb(157, 177, 185);
+  color: rgb(226, 226, 226);
 }
 
 .emailtextbox{
