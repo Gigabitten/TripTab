@@ -11,9 +11,6 @@
     <title>TripTab</title>
 
     <style>
-      body{
-        
-      }
       .col {
         width: 40%;
         float:left;
@@ -21,20 +18,32 @@
         padding-left: 10%;
       }
       .bigassbutton {
-
-        font-size: 15px;
+        padding-left: 90px;
+        padding-right: 90px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        font-size: 50px;
+        border: solid 10px rgb(77, 96, 117);
+        border-radius: 20px;
+        text-decoration: underline;
+        
       }
 
       .bigassbutton:hover {
         color: black;
-        background-color: hotpink;
-        cursor: url(https://cdn.custom-cursor.com/db/6083/32/food-and-drinks-eggplant-pointer.png), auto;
-
+        background-color: rgb(157, 177, 185);
+        border-color: black;
+        
       }
       .slogan{
         font-size: 30px;
         font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        color: white;
+        text-align: center;
+        border: 5px solid rgb(77, 96, 117);
+        background-color: rgb(47,55,26);
+        color: rgb(157, 177, 185);
+        border-radius: 10px;
+        padding: 50px;
       }
       
     </style>
@@ -58,7 +67,9 @@
       <div class="col">
         <div class="center">
           <h3 class="slogan">Splitting the tab on a trip can be a hassle, let TripTab do all the hard work for you and sign up today!</h3>
-          <button class="bigassbutton" onclick="signUp()" id="signUp">Sign Up</button>
+          <div class="center">
+            <button class="bigassbutton" onclick="signUp()" id="signUp">Sign Up!</button>
+          </div>  
         </div>
       </div>
       <div class="col">
